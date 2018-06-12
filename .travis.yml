@@ -13,6 +13,9 @@ branches:
   only:
     - master
 
+services:
+  - redis-server
+
 matrix:
   fast_finish: true
 
