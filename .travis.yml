@@ -16,9 +16,7 @@ branches:
 matrix:
   fast_finish: true
 
-install:
-  - pip install tox-travis
-  - python setup.py install
+install: pip install tox-travis
 
 script: tox
 
