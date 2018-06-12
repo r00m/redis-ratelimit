@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 from codecs import open
 
 from os import path
-from redis_ratelimit import __version__
+from re import search
 
 here = path.abspath(path.dirname(__file__))
 
@@ -12,9 +12,12 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
+with open(path.join(here, 'redis_ratelimit', '__init__.py')) as f:
+    VERSION = search(r'VERSION = \((.+?)\)', f.read()).group(1).replace(', ', '.')
+
 setup(
     name='redis-ratelimit',
-    version=__version__,
+    version=VERSION,
     description='A fixed window rate limiter based on Redis',
     long_description=long_description,
     url='https://github.com/romantomjak/redis-ratelimit',
