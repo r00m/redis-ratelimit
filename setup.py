@@ -41,6 +41,6 @@ setup(
     keywords='redis rate-limit rate-limiter ratelimit ratelimiter',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=['redis'],
-    tests_require=['coverage'],
+    tests_require=['redis', 'coverage'],
     test_suite='tests',
 )
