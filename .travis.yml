@@ -1,9 +1,7 @@
 language: python
-python:
-  - "3.6"
 services:
   - redis-server
-install: python setup.py install
-script: python setup.py test
+install: pip install tox
+script: tox
 notifications:
   email: false
